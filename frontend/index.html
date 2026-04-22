@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management - Vibe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8">User Management</h1>
+
+        <!-- Form Section -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 id="formTitle" class="text-xl font-semibold mb-4">Add New User</h2>
+            <form id="userForm" class="space-y-4">
+                <input type="hidden" id="userId">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <input type="text" id="userName" placeholder="Full Name" required 
+                        class="border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="email" id="userEmail" placeholder="Email Address" required 
+                        class="border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="password" id="userPassword" placeholder="Password" required 
+                        class="border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="flex justify-end space-x-2">
+                    <button type="button" id="cancelBtn" class="hidden px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600">Cancel</button>
+                    <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Save User</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- List Section -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <table class="w-full text-left">
+                <thead class="bg-gray-50 border-b">
+                    <tr>
+                        <th class="px-6 py-3 text-sm font-semibold text-gray-600">ID</th>
+                        <th class="px-6 py-3 text-sm font-semibold text-gray-600">Name</th>
+                        <th class="px-6 py-3 text-sm font-semibold text-gray-600">Email</th>
+                        <th class="px-6 py-3 text-sm font-semibold text-gray-600">Created At</th>
+                        <th class="px-6 py-3 text-sm font-semibold text-gray-600">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="userList" class="divide-y">
+                    <!-- Data will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
